@@ -239,7 +239,7 @@ main(int argc, char *argv[])
 
 		/* Get BCT_SIZE from input image file  */
 		bct_size = get_bct_size_from_image(&context);
-		if (bct_size < 0) {
+		if (bct_size <= 0) {
 			printf("Error: Invalid input image file %s\n",
 			context.input_image_filename);
 			goto fail;
@@ -298,6 +298,19 @@ main(int argc, char *argv[])
 			context.raw_file);
 		printf("New BCT file %s has been successfully generated!\n",
 			context.output_image_filename);
+		goto fail;
+	}
+
+	if (!context.bct_init) {
+		e = 1;
+		printf("No BCT file has been read or generated.\n");
+		printf("This is likely due to an incomplete config file.\n");
+		goto fail;
+	}
+	if (!context.memory) {
+		e = 1;
+		printf("No output data generated.\n");
+		printf("This is likely due to an incomplete config file.\n");
 		goto fail;
 	}
 

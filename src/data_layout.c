@@ -218,8 +218,10 @@ write_page(build_image_context *context,
 		return -ENOMEM;
 	if (block->data == NULL)
 		return -ENOMEM;
-	assert(((page_number + 1) * context->page_size)
-			<= context->block_size);
+	if (((page_number + 1) * context->page_size) > context->block_size) {
+		printf("Page number outside block; likely config file error.\n");
+		return -ENOMEM;
+	}
 
 	if (block->pages_used != page_number) {
 		printf("Warning: Writing page in block out of order.\n");
@@ -837,6 +839,11 @@ begin_update(build_image_context *context)
 	int i;
 
 	assert(context);
+
+	if (context->page_size_log2 < NVBOOT_AES_BLOCK_SIZE_LOG2) {
+		printf("Page size is too small; likely config file error\n");
+		return 1;
+	}
 
 	/* Ensure that the BCT block & page data is current. */
 	if (enable_debug) {
