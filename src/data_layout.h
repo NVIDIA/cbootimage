@@ -26,7 +26,7 @@
 
 #include "cbootimage.h"
 
-/* Foward declarations */
+/* Forward declarations */
 struct build_image_context_rec;
 
 typedef struct blk_data_rec *blk_data_handle;

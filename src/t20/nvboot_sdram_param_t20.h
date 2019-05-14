@@ -279,7 +279,7 @@ typedef struct nvboot_sdram_params_rec {
 	uint32_t emc_zcal_mrw_cmd;
 
 	/*
-	 * Specifies the MRS command value for initilizing
+	 * Specifies the MRS command value for initializing
 	 * the mode register.
 	 */
 	uint32_t emc_mrs_reset_dll;

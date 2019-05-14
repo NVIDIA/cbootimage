@@ -52,7 +52,7 @@
 
 /* Minimum size to read to at least be able to validate a BCT, it must
  * include the boot_data_version field with any BCT version while not
- * beeing larger than the smallest possible BCT. The currently supported
+ * being larger than the smallest possible BCT. The currently supported
  * BCT are as follow:
  *
  * Chip		Version offset	Total size

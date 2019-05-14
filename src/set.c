@@ -33,7 +33,7 @@
  * SetXXX() sets state based on the parsing results but does not perform
  *      any parsing of its own
  * A ParseXXX() function may call other parse functions and set functions.
- * A SetXXX() function may not call any parseing functions.
+ * A SetXXX() function may not call any parsing functions.
  */
 #define DEFAULT()                                                     \
 	default:                                                      \
