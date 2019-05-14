@@ -314,7 +314,7 @@ main(int argc, char *argv[])
 		goto fail;
 	}
 
-	/* Peform final signing & encryption of bct. */
+	/* Perform final signing & encryption of bct. */
 	e = sign_bct(&context, context.bct);
 	if (e != 0) {
 		printf("Signing BCT failed, error: %d.\n", e);

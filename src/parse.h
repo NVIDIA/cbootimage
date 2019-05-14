@@ -1143,7 +1143,7 @@ typedef struct cbootimage_soc_config_rec {
 	int (*get_bct_size)();
 
 	/*
-	 * Set MTS infomation in bct according to the value listed
+	 * Set MTS information in bct according to the value listed
 	 * in config file.
 	 *
 	 * @param context	The main context pointer

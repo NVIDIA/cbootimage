@@ -278,7 +278,7 @@ typedef struct nvboot_sdram_params_rec {
 	uint32_t emc_cfg_dig_dll;
 	/* Specifies the value for EMC_CFG_DIG_DLL_PERIOD */
 	uint32_t emc_cfg_dig_dll_period;
-	/* Specifies the vlaue of *DEV_SELECTN of various EMC registers */
+	/* Specifies the value of *DEV_SELECTN of various EMC registers */
 	uint32_t emc_dev_select;
 
 	/* Specifies the value for EMC_SEL_DPD_CTRL */
