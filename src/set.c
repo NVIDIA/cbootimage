@@ -98,6 +98,7 @@ read_from_image(char	*filename,
 	if (fread(*image, 1, (size_t)(*actual_size), fp) !=
 		(size_t)(*actual_size)) {
 		result = 1;
+		free(*image);
 		goto cleanup;
 	}
 
